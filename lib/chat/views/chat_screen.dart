@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:videocalling/chat/widgets/message_bubble.dart';
+import 'package:videocalling/chat/widgets/message_text_field.dart';
 
 class ChatScreen extends StatelessWidget {
   const ChatScreen({super.key});
@@ -10,12 +11,19 @@ class ChatScreen extends StatelessWidget {
       appBar: AppBar(
         title: Text('Chat'),
       ),
-      body: ListView.separated(
-        padding: const EdgeInsets.only(bottom: 16),
-        reverse: true,
-        itemBuilder: (_, index) => _messages[index],
-        separatorBuilder: (_, __) => const SizedBox(height: 16),
-        itemCount: _messages.length,
+      body: Column(
+        children: [
+          Expanded(
+            child: ListView.separated(
+              padding: const EdgeInsets.only(bottom: 16),
+              reverse: true,
+              itemBuilder: (_, index) => _messages[index],
+              separatorBuilder: (_, __) => const SizedBox(height: 16),
+              itemCount: _messages.length,
+            ),
+          ),
+          const MessageTextField(),
+        ],
       ),
     );
   }
