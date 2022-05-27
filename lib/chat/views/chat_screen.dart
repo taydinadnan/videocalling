@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:videocalling/chat/views/video_call_screen.dart';
 import 'package:videocalling/chat/widgets/message_bubble.dart';
 import 'package:videocalling/chat/widgets/message_text_field.dart';
 
@@ -10,6 +11,14 @@ class ChatScreen extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: Text('Chat'),
+        actions: [
+          IconButton(
+            onPressed: () => Navigator.of(context).push(
+              MaterialPageRoute(builder: (_) => const VideoCallScreen()),
+            ),
+            icon: const Icon(Icons.video_camera_front),
+          )
+        ],
       ),
       body: Column(
         children: [
