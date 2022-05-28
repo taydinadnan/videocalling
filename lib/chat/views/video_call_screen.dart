@@ -1,5 +1,6 @@
 import 'package:agora_uikit/agora_uikit.dart';
 import 'package:flutter/material.dart';
+import 'package:videocalling/utils/settings.dart';
 
 class VideoCallScreen extends StatefulWidget {
   const VideoCallScreen({super.key});
@@ -11,10 +12,9 @@ class VideoCallScreen extends StatefulWidget {
 class _VideoCallScreenState extends State<VideoCallScreen> {
   final AgoraClient _client = AgoraClient(
     agoraConnectionData: AgoraConnectionData(
-      appId: '09b20a9d9090437c86346952be341efe',
+      appId: APP_ID,
       channelName: 'fluttering',
-      tempToken:
-          '00609b20a9d9090437c86346952be341efeIABGJ6GWe+9rY1sVCNBFrBpXlXkmfbihSaXxILDm6Bo79b2YShYAAAAAEADOb2NvSiSSYgEAAQBKJJJi',
+      tempToken: Token,
     ),
   );
 
